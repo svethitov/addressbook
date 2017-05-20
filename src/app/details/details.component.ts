@@ -28,4 +28,13 @@ export class DetailsComponent implements OnInit {
     goBack(): void {
         this.location.back()
     }
+
+    childAdded(event): void {
+        this.goBack();
+    }
+
+    deleteContact(): void {
+        this.contactService.removeContact(this.contact.id);
+        this.goBack();
+    }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { Contact } from '../data/contact';
@@ -6,8 +6,7 @@ import { ContactService } from '../data/contact.service';
 
 @Component({
     selector: 'new',
-    templateUrl: './new-contact.component.html',
-    styleUrls: ['./new-contact.component.css']
+    templateUrl: './new-contact.component.html'
 })
 export class NewContactComponent {
     private contacts: Contact[];
@@ -23,14 +22,8 @@ export class NewContactComponent {
         this.location.back();
     }
 
-    newContact(firstName: string, lastName: string, address: string, mobile: string): void {
-        this.contactService.addContact({
-            id: this.contacts.length + 1,
-            firstName: firstName,
-            lastName: lastName,
-            address: address,
-            mobile: mobile
-        });
+    childAdded(event) {
         this.goBack();
     }
+
 }

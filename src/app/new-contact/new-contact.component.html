@@ -1,7 +1,7 @@
 <h3>New User</h3>
 
 <div *ngIf='contacts'>
-    <contact-form></contact-form>
+    <contact-form (completed)='childAdded($event)'></contact-form>
 </div>
 
 <button (click)='goBack()' class="btn btn-primary">Back to Contact List</button>

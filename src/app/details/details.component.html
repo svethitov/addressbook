@@ -1,5 +1,12 @@
-<h3> {{contact.firstName}} {{contact.lastName}} Details:</h3>
-
-<contact-form></contact-form>
-
-<button (click)='goBack()'>Back</button>
+<div class="container">
+    <div class="row">
+        <h3 class="lead"> {{contact.firstName}} {{contact.lastName}} (id: {{contact.id}}) Details:</h3>
+    </div>
+    <div class="row">
+        <contact-form (completed)='childAdded($event)'></contact-form>
+    </div>
+    <div class="row">
+        <button (click)='goBack()' class="btn btn-primary">Back</button>
+        <button (click)='deleteContact()' class="btn btn-danger" style="margin-left: .3em">Delete</button>
+    </div>
+</div>
