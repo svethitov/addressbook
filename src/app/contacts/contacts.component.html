@@ -1,0 +1,25 @@
+﻿<nav>
+    <a routerLink='/newContact' routerLinkActive='active'>New Contact</a>
+</nav>
+
+<div class="contacts">
+    <h3>Contacts list</h3>
+    <ul>
+        <li *ngFor="let contact of contacts" (click)="onSelect(contact)" [class.selected]="contact === selectedContact">
+            {{contact.lastName}}, {{contact.firstName}}
+        </li>
+    </ul>
+</div>
+<div class="details" *ngIf="selectedContact">
+    <h3>Details:</h3>
+    <div>
+        <h3>{{selectedContact.firstName}} {{selectedContact.lastName}}</h3>
+        <form>
+            <label>First Name: </label> {{selectedContact.firstName}}
+            <label>Last Name: </label> {{selectedContact.lastName}}
+            <label>Address: </label> {{selectedContact.address}}
+            <label>Mobile: </label> {{selectedContact.mobile}}
+        </form>
+        <a [routerLink]="['/details', selectedContact.id]">Edit this contact</a>
+    </div>
+</div>
