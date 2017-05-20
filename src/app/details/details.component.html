@@ -1,19 +1,5 @@
 <h3> {{contact.firstName}} {{contact.lastName}} Details:</h3>
 
-<form>
-    <div>
-        <label>First Name: </label>
-        <input type="text" id="firstName" [(ngModel)]='contact.firstName' name="firstName">
-    </div>
-    <div>
-        <label>Last Name: </label>
-    </div>
-    <div>
-        <label>Address: </label>
-    </div>
-    <div>
-        <label>Mobile: </label>
-    </div>
-</form>
+<contact-form></contact-form>
 
 <button (click)='goBack()'>Back</button>

@@ -1,25 +1,7 @@
 <h3>New User</h3>
-<form>
-    <div>
-        <label>First Name</label>
-        <input type="text" placeholder="First Name" #firstName />
-    </div>
-    <div>
-        <label>Last Name</label>
-        <input type="text" placeholder="Last Name" #lastName />
-    </div>
-    <div>
-        <label>Address</label>
-        <input type="text" placeholder="Address" #address />
-    </div>
-    <div>
-        <label>Mobile</label>
-        <input type="text" placeholder="Mobile" #mobile />
-    </div>
-</form>
-<button (click)='newContact(
-    firstName.value, lastName.value, address.value, mobile.value
-)'>
-    Save
-</button>
-<button (click)='goBack()'>Back to Contact List</button>
+
+<div *ngIf='contacts'>
+    <contact-form></contact-form>
+</div>
+
+<button (click)='goBack()' class="btn btn-primary">Back to Contact List</button>

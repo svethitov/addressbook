@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DetailsComponent } from './details/details.component';
 import { NewContactComponent } from './new-contact/new-contact.component';
+import { FormComponent } from './form/form.component'
 
 import { AppRoutingModule } from './app-routing.module';
 import { ModelModule } from './data/data.module';
@@ -16,7 +17,8 @@ import { ModelModule } from './data/data.module';
     AppComponent,
     ContactsComponent,
     DetailsComponent,
-    NewContactComponent
+    NewContactComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

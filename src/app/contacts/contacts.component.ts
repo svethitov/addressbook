@@ -5,8 +5,8 @@ import { ContactService } from '../data/contact.service';
 
 @Component({
     selector: 'contacts',
-    templateUrl: './contacts.component.html',
-    styleUrls: ['./contacts.component.css']
+    templateUrl: './contacts.component.html'//,
+    //styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
     private contacts: Contact[];

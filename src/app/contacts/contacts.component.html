@@ -1,25 +1,46 @@
-﻿<nav>
-    <a routerLink='/newContact' routerLinkActive='active'>New Contact</a>
-</nav>
+﻿<div class="container">
 
-<div class="contacts">
-    <h3>Contacts list</h3>
-    <ul>
-        <li *ngFor="let contact of contacts" (click)="onSelect(contact)" [class.selected]="contact === selectedContact">
-            {{contact.lastName}}, {{contact.firstName}}
-        </li>
-    </ul>
-</div>
-<div class="details" *ngIf="selectedContact">
-    <h3>Details:</h3>
-    <div>
-        <h3>{{selectedContact.firstName}} {{selectedContact.lastName}}</h3>
-        <form>
-            <label>First Name: </label> {{selectedContact.firstName}}
-            <label>Last Name: </label> {{selectedContact.lastName}}
-            <label>Address: </label> {{selectedContact.address}}
-            <label>Mobile: </label> {{selectedContact.mobile}}
-        </form>
-        <a [routerLink]="['/details', selectedContact.id]">Edit this contact</a>
+    <nav class=" row nav nav-pills">
+        <a class="nav-link active" routerLink='/newContact' routerLinkActive='active'>New Contact</a>
+    </nav>
+
+
+    <div class="row">
+        <div class="col-4">
+            <h3 class="lead" style="align-content: center">Contacts: </h3>
+            <ul class="list-group">
+                <li *ngFor="let contact of contacts" (click)="onSelect(contact)" [class.active]="contact === selectedContact" class="list-group-item">
+                    {{contact.lastName}}, {{contact.firstName}}
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <div class="card" *ngIf="selectedContact">
+                <div class="card-block">
+                    <h4 class="card-title">{{selectedContact.firstName}} {{selectedContact.lastName}}</h4>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">First Name: </th>
+                                <td>{{selectedContact.firstName}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Last Name: </th>
+                                <td>{{selectedContact.lastName}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address: </th>
+                                <td>{{selectedContact.address}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Mobile: </th>
+                                <td>{{selectedContact.mobile}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a class="btn btn-secondary" [routerLink]="['/details', selectedContact.id]">Edit this contact</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
