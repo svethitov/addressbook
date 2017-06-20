@@ -1,6 +1,7 @@
 # AddressBook
 
-Small project for training
+Small project for training.
+And git.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
